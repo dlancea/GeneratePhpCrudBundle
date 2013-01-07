@@ -24,7 +24,7 @@
 
         {%- elseif metadata.type in ['date', 'datetime'] %}
 
-            <td>{{ '<?= $view->escape( $entity->get'~ field|capitalize|replace({'_': ''}) ~'()->format("Y-m-d H:i:s") ) ?>' }}</td>
+            <td>{{ '<?= $view->escape( $entity->get'~ field|capitalize|replace({'_': ''}) ~'() ? $entity->get'~ field|capitalize|replace({'_': ''}) ~'()->format("Y-m-d H:i:s") : "" ) ?>' }}</td>
 
         {%- else %}
 

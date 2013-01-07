@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Umem\GeneratePhpCrudBundle\Generator;
+namespace Dlancea\GeneratePhpCrudBundle\Generator;
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;

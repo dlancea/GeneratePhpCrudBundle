@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Umem\GeneratePhpCrudBundle\Command;
+namespace Dlancea\GeneratePhpCrudBundle\Command;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\Output;
 use Symfony\Component\Console\Command\Command;
-use Umem\GeneratePhpCrudBundle\Generator\PhpCrudGenerator;
+use Dlancea\GeneratePhpCrudBundle\Generator\PhpCrudGenerator;
 use Sensio\Bundle\GeneratorBundle\Generator\DoctrineFormGenerator;
 use Sensio\Bundle\GeneratorBundle\Command\Validators;
 use Sensio\Bundle\GeneratorBundle\Command\Helper\DialogHelper;
@@ -56,7 +56,7 @@ Using the --with-write option allows to generate the new, edit and delete action
 <info>php app/console doctrine:generate:crud --entity=AcmeBlogBundle:Post --route-prefix=post_admin --with-write</info>
 EOT
             )
-            ->setName('umem:generate:phpcrud')
+            ->setName('dlancea:generate:phpcrud')
         ;
     }
 

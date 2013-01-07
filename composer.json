@@ -1,0 +1,30 @@
+{
+    "name": "dlancea/symfony-generate-php-crud-bundle",
+    "description": "This bundle generates PHP code for you",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "David Lancea",
+            "email": "dlancea@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.1.*",
+        "symfony/console": "2.1.*",
+        "sensio/generator-bundle": "dev-master"
+    },
+    "require-dev": {
+        "symfony/doctrine-bridge": "2.1.*",
+        "doctrine/orm": ">=2.1,<2.4-dev",
+        "twig/twig": ">=1.8,<2.0-dev"
+    },
+    "autoload": {
+        "psr-0": { "Dlancea\\GeneratePhpCrudBundle": "" }
+    },
+    "target-dir": "Dlancea/GeneratePhpCrudBundle",
+}

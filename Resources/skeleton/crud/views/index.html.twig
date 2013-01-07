@@ -1,0 +1,56 @@
+<h1>{{ entity }} list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+        {%- for field, metadata in fields %}
+
+            <th>{{ field|capitalize }}</th>
+
+        {%- endfor %}
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{ '<?php foreach($entities as $entity): ?>' }}
+        <tr>
+
+    {%- for field, metadata in fields %}
+        {%- if loop.first and ('show' in actions) %}
+
+            <td><a href="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"_show', array('id' => $entity->getId()) ) ?>" }}">{{ '<?= $view->escape( $entity->get'~ field|capitalize|replace({'_': ''}) ~'() ) ?>' }}
+					</a></td>
+
+        {%- elseif metadata.type in ['date', 'datetime'] %}
+
+            <td>{{ '<?= $view->escape( $entity->get'~ field|capitalize|replace({'_': ''}) ~'()->format("Y-m-d H:i:s") ) ?>' }}</td>
+
+        {%- else %}
+
+            <td>{{ '<?= $view->escape( $entity->get'~ field|capitalize|replace({'_': ''}) ~'() ) ?>' }}</td>
+
+        {%- endif %}
+
+        {%- if loop.last %}
+
+            <td>
+                {%- include "views/others/actions.html.twig" %}
+            </td>
+
+        {%- endif %}
+    {%- endfor %}
+        </tr>
+    {{ '<?php endforeach; ?>' }}
+    </tbody>
+</table>
+
+{% if 'new' in actions %}
+<ul>
+    <li>
+        <a href="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"_new'); ?>" }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endif %}

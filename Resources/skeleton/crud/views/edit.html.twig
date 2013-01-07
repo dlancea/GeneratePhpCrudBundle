@@ -1,0 +1,11 @@
+<h1>{{ entity }} edit</h1>
+
+<form action="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"_update', array('id' => $entity->getId()) ) ?>" }}" method="post">
+    {{ "<?= $view['form']->widget($edit_form) ?>" }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
+
+{% set hide_edit, hide_delete = true, false %}
+{% include 'views/others/record_actions.html.twig' %}

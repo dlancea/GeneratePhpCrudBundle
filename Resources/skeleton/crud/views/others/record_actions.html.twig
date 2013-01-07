@@ -1,0 +1,22 @@
+<ul class="record_actions">
+    <li>
+        <a href="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"') ?>" }}">
+            Back to the list
+        </a>
+    </li>
+{% if ('edit' in actions) and (not hide_edit) %}
+    <li>
+        <a href="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"_edit', array('id' => $entity->getId()) ) ?>" }}">
+            Edit
+        </a>
+    </li>
+{% endif %}
+{% if ('delete' in actions) and (not hide_delete) %}
+    <li>
+        <form action="{{ "<?= $view['router']->generate('"~ route_name_prefix ~"_delete', array('id' => $entity->getId()) ) ?>" }}" method="post">
+            {{ "<?= $view['form']->widget($delete_form) ?>" }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+{% endif %}
+</ul>

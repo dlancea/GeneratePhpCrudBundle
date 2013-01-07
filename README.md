@@ -10,11 +10,7 @@ To use the new command, run the following on the command line:
 
 The command uses the same parameters as doctrine:generate:crud.
 
-### Why is PhpCrudGenerator a re-write of DoctrineCrudGenerator?
-
-Because DoctrineCrudGenerator uses all private methods instead of protected, so instead of just overwriting
-the generate*View methods, I had to copy-paste the whole class (grrr).
-
 ### Todo
 
- + Testing.
+ + Testing
+ + Better code re-use(?)

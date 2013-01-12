@@ -14,3 +14,5 @@ The command uses the same parameters as doctrine:generate:crud.
 
  + Testing
  + Better code re-use(?)
+
+FYI, I gave up on this project. Trying to use Symfony with PHP templates is just not viable if you want to use additional 3rd party code since libraries use twig almost exclusively and the two don't work together. This library works, but will not be maintained.

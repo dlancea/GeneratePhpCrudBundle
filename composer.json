@@ -1,6 +1,6 @@
 {
     "name": "dlancea/symfony-generate-php-crud-bundle",
-    "description": "This bundle generates PHP code for you",
+    "description": "Extends Symfony's CRUD Generator to create PHP view files (instead of twig)",
     "keywords": [],
     "license": "MIT",
     "authors": [
